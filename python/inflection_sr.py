@@ -1,8 +1,9 @@
 """
 Library that inflects given noun in Serbian language into all of its forms.
-TODO(nciric): accept a CSV file for bulk operations.
 Required inputs are: singular and plural in nominative, gender.
 """
+
+import group_f_c
 
 from collections import Counter as mset
 from enum import Enum
@@ -43,11 +44,10 @@ def inflect_noun(singular, plural, gender: Gender):
       elif group == DeclinationGroup.GROUP_MFN_A:
         print("MFN_A")
       else:
-        print("F_C")
+        return group_f_c.inflect(singular)
     except:
       # Let caller decide whether to bail or to continue.
       raise
-    return 0
 
 
 def classify_noun(singular, plural, gender: Gender):
