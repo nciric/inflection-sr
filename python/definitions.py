@@ -1,6 +1,7 @@
 """ Common definitiont used across codebase."""
 
 from enum import Enum
+from enum import IntEnum
 
 VOWELS = ('а', 'е', 'и', 'о', 'у')
 
@@ -23,3 +24,21 @@ class DeclinationGroup(Enum):
     GROUP_MFN_A = 3
     # f, ending in consonant (and associated adjective is female - we ignore this)
     GROUP_F_C = 4
+
+
+class Cases(IntEnum):
+    """ Indexing into extensions lists. """
+    S_NOMINATIVE = 0
+    S_GENITIVE = 1
+    S_DATIVE = 2
+    S_ACCUSATIVE = 3
+    S_VOCATIVE = 4
+    S_INSTRUMENTAL = 5
+    S_LOCATIVE = 6
+    P_NOMINATIVE = 7
+    P_GENITIVE = 8
+    P_DATIVE = 9
+    P_ACCUSATIVE = 10
+    P_VOCATIVE = 11
+    P_INSTRUMENTAL = 12
+    P_LOCATIVE = 13

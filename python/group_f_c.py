@@ -2,6 +2,8 @@
 Именице женског рода које се у номинативу једнине завршавају наставком -∅ (тј. имају видљив сугласнички завршетак) мењају се по четвртој именичкој врсти.
 """
 
+import definitions as defs
+
 EXTENSIONS = ['', 'и', 'и', '', 'ју', 'и', 'и',
               'и', 'и', 'има', 'и', 'и', 'има', 'има']
 
@@ -16,13 +18,13 @@ ZS_TRANSITION = {'с': 'ш', 'з': 'ж'}
 
 def inflect(singular):
     """ Returns array of inflected forms, starting with nominative, singular."""
-    return [generate_case(singular, x) for x in EXTENSIONS]
+    return [generate_case(singular, x, i) for (i, x) in enumerate(EXTENSIONS, 0)]
 
 
-def generate_case(singular, extension):
+def generate_case(singular, extension, case):
     """ Generate proper form. In most cases it's plain concatenation,
         except for vocative, singular."""
-    if extension != 'ју':
+    if case != defs.Cases.S_VOCATIVE:
         return singular + extension
 
     # Јотовање
