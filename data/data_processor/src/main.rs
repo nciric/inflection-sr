@@ -85,7 +85,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     let default_glob: String = "../*.xml".to_string();
-    let default_output: String = "word_frequency_table.xml".to_string();
+    let default_output: String = "../word_frequency_table.xml".to_string();
 
     match args.len() {
         1 => process_files(&default_glob, &default_output),
