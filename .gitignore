@@ -143,3 +143,6 @@ dmypy.json
 
 # Data file ignores.
 data/*.xml
+
+# Rust exceptions.
+data/data_processor/Cargo.lock
