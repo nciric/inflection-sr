@@ -1,3 +1,7 @@
+// Parses xml file(s) from https://dumps.wikimedia.org/srwiki/latest/,
+// extracts unique words, in Cyrillic alphabet, and writes them to TSV file (count, word).
+// We don't actually care about XML parsing, so a line reader should be enough."""
+
 #[macro_use]
 extern crate lazy_static;
 
