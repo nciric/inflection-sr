@@ -140,4 +140,6 @@ dmypy.json
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
-data/srwiki-latest-pages-meta-current.xml
+
+# Data file ignores.
+data/*.xml
